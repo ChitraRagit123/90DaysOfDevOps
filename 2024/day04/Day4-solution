@@ -1,0 +1,45 @@
+1.Explain in your own words and with examples what Shell Scripting means for DevOps.
+:- Shell scripting is a powerful automation tool used in DevOps to execute multiple Linux/Unix commands in a script file, reducing manual effort and ensuring consistency across tasks. It is essential for automating deployments, configurations, monitoring, and infrastructure management.
+
+2.What is #!/bin/bash? Can we write #!/bin/sh as well?
+:- #!/bin/bash is called a shebang (#!), followed by the path to the Bash shell (/bin/bash). It tells the system to use Bash as the interpreter to execute the script.
+
+3.Write a Shell Script that prints I will complete #90DaysOfDevOps challenge.
+:-  vim 90daysofdevops.sh
+    i
+    write "I will complete #90DaysOfDevOps challenge
+    esc+:+w+q
+
+4.Write a Shell Script that takes user input, input from arguments, and prints the variables.
+:- takes  user input
+    #!/bin/bash
+    echo "Enter your name:"
+    read name
+    echo "Hello, $name!"
+:- input from arguments
+    #!/bin/bash
+    echo "Rank $1" (prints 1st argument while running the script)
+:- prints the variables
+    #!/bin/bash
+    name="Chitra"
+    echo "Hello, $name!"
+
+5.Provide an example of an If-Else statement in Shell Scripting by comparing two numbers.
+here i'm taking an example which takes input numbers from user and compare them:
+    echo "Enter 1st number:"
+    read first
+    echo "1st number: $first!"
+
+    echo "Enter 2nd number:"
+    read second
+    echo "2nd number: $second!"
+
+    if [ "$first" -gt "$second" ]; then
+      echo "$first is greater than $second"
+    elif [ "$first" -lt "$second" ]; then
+      echo "$first is less than $second"
+    else
+      echo "Both numbers are equal"
+    fi
+
+
