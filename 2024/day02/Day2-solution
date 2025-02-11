@@ -1,0 +1,26 @@
+Basic Linux Command:
+ls:to list files in current directory
+ls -a: to show all the hidden files
+pwd:present current directory path
+whoami:current user
+mkdir <dir_name>:makes a new directory
+cd <dir_name>: enters into particular directory
+cd .. :goes one directory back
+touch file_name.txt: touch command is used to make new files
+touch file{1..10}.txt: can make multiple files at a time
+ping www.google.com: ping command check if a web is working in our machine or not
+rm -r file*:remove files recursively whose file name start with "file"
+sudo su:turns into super user
+sudo useradd -m user_name: add new user
+sudo passwd usern_name: can create password for user "user_name
+su user_name: changes user to user_name
+sudo apt-get update:Updates the package lists from repositories to get information on the latest versions of packages and their dependencies.
+sudo apt-get upgrade:Upgrades all installed packages to their latest available versions based on the updated package lists.
+sudo apt-get install docker.io: used to download tools like docker
+cat file.txt:prints the content of the file
+vim file.txt: open file in vim editor, where we can edit the file(i->esc+:+wq)
+head file.txt: same as cat command but prints top 10 line of the file
+tail file.txt: same as cat command but prints last 10 lines of the file
+head file.txt -n 2 :prints top 2 lines of the file
+
+
