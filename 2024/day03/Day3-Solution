@@ -1,0 +1,37 @@
+Linux Commands to:
+1.View the content of a file and display line numbers.
+  :cat -n filename
+2.Change the access permissions of files to make them readable, writable, and executable by the owner only.
+  :chmod 700 file_name.txt
+3.Check the last 10 commands you have run.
+  :history | tail -10
+4.Remove a directory and all its contents.
+  :rmdir -r dir_name
+  :rmdir -rf dir_name(do not ask for confirmation)
+5.Create a fruits.txt file, add content (one fruit per line), and display the content.
+  :vim fruits.txt
+  :i
+  :add some content
+  :esc+:+w+q
+  :cat fruits.txt
+6.Add content in devops.txt (one in each line) - Apple, Mango, Banana, Cherry, Kiwi, Orange, Guava. Then, append "Pineapple" to the end of the file.
+  :echo -e "Apple\nMango\nBanana\nCherry\nKiwi\nOrange\nGuava" > devops.txt
+  :echo "Pineapple" >> devops.txt
+7.Show the first three fruits from the file in reverse order.
+  :head devops.txt -n 3 | tac
+8.Show the bottom three fruits from the file, and then sort them alphabetically.
+  :tail devops.txt -n 3 | sort
+9.Create another file Colors.txt, add content (one color per line), and display the content.
+  :echo -e "Blue\nRed\nGreen\nYellow\nWhite\nBlack\nGrey" > Colors.txt
+  :cat Colors.txt
+10.Add content in Colors.txt (one in each line) - Red, Pink, White, Black, Blue, Orange, Purple, Grey. Then, prepend "Yellow" to the beginning of the file.
+  :sed -i 'Yellow' Colors.txt(risky withour backup)
+11.Find and display the lines that are common between fruits.txt and Colors.txt.
+  :grep -Fx -f fruits.txt Colors.txt
+12.Count the number of lines, words, and characters in both fruits.txt and Colors.txt.
+  :wc -l fruits.txt Colors.txt  # Line count only
+  :wc -w fruits.txt Colors.txt  # Word count only
+  :wc -c fruits.txt Colors.txt  # Character count only
+OR
+  :wc fruits.txt Colors.txt
+
