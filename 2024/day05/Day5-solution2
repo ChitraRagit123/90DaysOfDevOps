@@ -27,6 +27,49 @@ Examples of Crontab Jobs
 0 5 * * * /path/to/script.sh
 
 
+2.Create a Script to Backup All Your Work:
+in /home/ubuntu
+-touch backup.log(as cron job runs in background we can't find error if it runs wrong, therefore we are using log  file)
+-mkdir backups(here latest 5 backups will be stored)
+-mkdir backupScripts(store the backup_script.sh)
+-cd backupScripts
+-vim backup_script.sh
+-i
+-BACKUP_SCRIPT STARTS
+#!/bin/bash
+
+# Define source and target directories
+src_dir="/home/ubuntu/src_dir/createDirectories.sh"
+target_dir="/home/ubuntu/backups"
+
+# Ensure the target directory exists
+mkdir -p "$target_dir"
+
+# Generate a timestamp for the backup file
+timestamp=$(date +"%Y%m%d_%H%M%S")
+
+# Create a zip backup
+backup_file="${target_dir}/backup_${timestamp}.zip"
+zip -r "$backup_file" "$src_dir" > /dev/null
+# Print success message
+echo "Backup created: $backup_file"
+
+# Keep only the last 5 backups and delete older ones
+cd "$target_dir" || exit
+ls -t backup_*.zip | tail -n +6 | xargs rm -f
+
+echo "Old backups removed. Only the latest 5 are retained."
+
+-BACKUP_SCRIPT_ENDS
+-esc+:+w+q
+
+#now got to crontab and add a cronjob to mrun the script automatically and store latest 5 backups of a particular file
+-crontab -e
+CRONJOB STARTS
+* * * * * /bin/bash /home/ubuntu/backupScripts/backup_scripts.sh >> /home/ubuntu/backup.log 2>&1
+CROBJOB ENDS
+#this cronjob will run every minute evey hour,every day of the week,every month,every day
+
 
 
 
