@@ -1,0 +1,48 @@
+
+
+Cron and Crontab Explained
+1. Cron (Command Run On)
+-Cron is a time-based job scheduler in Unix-like operating systems.
+-It allows users to automate repetitive tasks by scheduling commands or 
+ scripts to run at specified intervals (e.g., daily, weekly, or every 
+ minute).
+-The cron daemon (crond) runs in the background and executes scheduled jobs.
+2. Crontab (Cron Table)
+-Crontab is a configuration file that contains cron jobs for a specific user.
+-Each user can have their own crontab file to define scheduled tasks.
+-The crontab command is used to edit, list, or remove cron jobs.
+
+Crontab Syntax
+A crontab entry follows this format:
+MIN HOUR DOM MON DOW COMMAND
+MIN → Minute (0-59)
+HOUR → Hour (0-23)
+DOM → Day of the Month (1-31)
+MON → Month (1-12)
+DOW → Day of the Week (0-6, where 0 = Sunday)
+COMMAND → The script or command to run
+
+Examples of Crontab Jobs
+1️⃣ Run a script every day at 5 AM
+0 5 * * * /path/to/script.sh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
