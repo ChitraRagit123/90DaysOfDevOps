@@ -1,0 +1,40 @@
+1.Understanding the file permissions
+: ls -l file_name.txt(used to check the file permissions)
+:-rwx--x--x
+: here first - represent if it is a file(-) or directory(d)
+- here first pair rwx represent permissions to owner(if - "no permission")
+- here second pair rwx represent permissions to group(if - "no permission")
+- here third pair rwx represent permissions to others(if - "no permission")
+-example : drwx--x--x: this implies this are the permissions to a directory,owner has read,write,execute permission,userns in group have execute permission,and others have execute permission.
+-chown ubuntu myfile.txt(🔹 Changes the owner of myfile.txt to ubuntu.
+                         🔹 The group remains unchanged)
+-sudo chgrp devops my-devops-file.txt(🔹changes the group that can access the file)
+     r   w   x
+7    1   1   1    rwx
+6    1   1   0    rw-
+5    1   0   1    r-x
+4    1   0   0    r--
+3    0   1   1    -wx
+2    0   1   0    -w-
+1    0   0   1    --x
+0    0   0   0    ---
+
+-chmod 700 myfile.txt(here it give permission to owner -read,write,execute,
+group ---,others ---)
+
+📌 Task: Create a Script That Changes the Permissions of Multiple Files in a Directory Based on User Input:
+SCRIPTS START:
+#!/bin/bash
+#take path of the file whose permission is to be changed
+#take ther permission
+
+echo "Script to chane permission"
+echo "Enter the path of the file:"
+read path
+
+echo "Enter ther permission yo wan to give:"
+read permission
+
+chmod "$permission" "$path"
+SCRIPT ENDS
+
